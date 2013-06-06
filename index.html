@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>EBook Search</title>
+    <link rel="stylesheet" href="resource/index.css" type="text/css"/>
+    <script type="text/javascript" src="resource/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="resource/index.js"></script>
+</head>
+<body>
+<div id="topbtn">
+    <img src="resource/top.png">
+</div>
+<div id="search">
+    <input type="text" autofocus x-webkit-speech/>
+    <input id="search_btn" type="button" value="Search"/>
+</div>
+<hr/>
+<div id="content">
+    <div id="board" class="topic">
+        <div class="introduction">说明:</div>
+        <ul class="introduction">
+            <li>关键字之间请用空格或加号(+)分隔.</li>
+            <li>搜索框为空时,点击 Search 按钮效果为随机展示n本书(根据你的分辨率);</li>
+        </ul>
+        <div class="bugfixed">BUG修复:</div>
+        <ul class="bugfixed">
+            <li>修复了结果为空时没有任何提示的BUG;</li>
+            <li>文件大小附上了正常的计量单位</li>
+        </ul>
+        <div class="newfeatures">新功能:</div>
+        <ul class="newfeatures">
+            <li>输入框绑定enter事件,效果也点击 Search 按钮完全一样(包括随机展示);</li>
+            <li>增加快速回到顶端按钮;</li>
+        </ul>
+    </div>
+    <div id="booklist">
+        
+    </div>
+</div>
+
+</body>
+</html>
