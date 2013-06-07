@@ -5,4 +5,4 @@ searchfcd
 
 #不会直接提供下载链接#
 
-发布链接：![http://searchfcd.sinaapp.com/][http://searchfcd.sinaapp.com/]
+发布链接：http://searchfcd.sinaapp.com/
