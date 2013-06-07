@@ -9,20 +9,23 @@
 </head>
 <body>
     <div id="board">
-        <div class="title">keywords:<span id="keywords"></span></div>
+        <div class="title">keywords:<span class="keyword">地球</span></div>
+        <hr />
         <div class="booklist">
             <div class="record">
-                <span class="name">name</span>
+                <span class="rownum">1:</span>
+                <span class="name">Name</span>
                 <span class="size">size</span>
                 <span class="modifyDate">modifyDate</span>
             </div>
-            <div class="location">location</div>
+            <div class="location"><span>location</span></div>
         </div>
     </div>
     <div id="commandline">
-        <div id="beforepre"></div>
-        <div id="pre"></div>
-        <div id="current"></div>
+        <div id="beforepre"><span class="rownum">3:</span><input id="bpreline" type="text" value="command3" /></div>
+        <div id="pre"><span class="rownum">2:</span><input id="preline" type="text" value="command2" /></div>
+        <div id="current">$:<input id="cmdline" type="text" value="" autofocus /></div>
     </div>
+    <div id="info">totle:29 pages; current page 2.</div>
 </body>
 </html>
