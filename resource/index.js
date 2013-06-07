@@ -41,19 +41,18 @@ $(window).resize(function() {
                 for(var j in result[i]) {
                     var book = result[i][j];
                     var bookdom = createBookRecord($(book).attr("name"),$(book).attr("size"),$(book).attr("type"),$(book).attr("modifyDate"),$(book).text());
-                    bookdom = replaceKeywords(bookdom,keywords)
                     appendBook(bookdom); 
                 }
             }
         }
     }
 
-    function replaceKeywords(bookdom,keywords) {
+    function replaceKeywords(bookname,keywords) {
         for(var i in keywords) {
             var keyword = keywords[i];
-            bookdom = bookdom.replace(keyword,"<span class='keyword'>"+keyword+"</span>");
+            bookname = bookname.replace(keyword,"<span class='keyword'>"+keyword+"</span>");
         }
-        return bookdom;
+        return bookname;
     }
 
     function search(keywords) {
@@ -109,6 +108,7 @@ $(window).resize(function() {
     }
 
     function createBookRecord(bookname,size,type,modifyDate,location) {
+        bookname = replaceKeywords(bookname,keywords);
         var str = "<div class='record'>" +
         "<div class='title'>"+bookname+"<span class='size'>"+calcSize(size)+"</span></div> " +
         "<div class='tips'>" +
