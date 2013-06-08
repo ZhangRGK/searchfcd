@@ -54,8 +54,10 @@ function searchEvent() {
 function replaceKeywords(bookname, keywords) {
     for (var i in keywords) {
         var keyword = keywords[i];
-        bookname = bookname.replace(keyword, "<span class='keyword'>" + keyword + "</span>");
+        bookname = bookname.replace(keyword, "{lol~{" + keyword + "}~lol}");
     }
+    bookname = bookname.replace('{lol~{','<span class="keyword">');
+    bookname = bookname.replace('}~lol}','</span>');
     return bookname;
 }
 
