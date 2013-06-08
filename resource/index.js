@@ -24,6 +24,7 @@ $(function () {
 
 //方法
 function searchEvent() {
+    var bookStr = '';
     var ranNum = Math.floor(($(window).height() - 150) / 109);
     $(".topic").addClass("none");
     var querystr = $("#search_input").val();
@@ -43,10 +44,10 @@ function searchEvent() {
         for (var i = result.length - 1; i > 0; i--) {
             for (var j in result[i]) {
                 var book = result[i][j];
-                var bookdom = createBookRecord($(book).attr("name"), $(book).attr("size"), $(book).attr("type"), $(book).attr("modifyDate"), $(book).text());
-                appendBook(bookdom);
+                bookStr += createBookRecord($(book).attr("name"), $(book).attr("size"), $(book).attr("type"), $(book).attr("modifyDate"), $(book).text());
             }
         }
+        appendBook(bookStr);
     }
 }
 
