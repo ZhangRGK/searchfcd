@@ -1,5 +1,6 @@
 html,body {margin:0;border:0;padding:0;font:12/1.5 "Microsoft YaHei","微软雅黑",arial;}
-#search {width:100%;padding:30px 0 30px 50px;min-width:30em;border-bottom:solid 1px #ccc;}
+#search {width:100%;padding:30px 0 30px 50px;min-width:30em;border-bottom:solid 1px #ccc;
+    box-shadow: 0px 2px 2px #ccc;}
 #search_btn {font-size:18px;padding:2px 10px;}
 #search input[type=text] {font-size:18px;min-width:5em;border:solid 1px #ccc;padding:0 3px;
     line-height:30px;height:30px;}
