@@ -38,11 +38,12 @@ function searchEvent() {
         clearList();
         if (result[1].length == 0) {
             $("#booklist").append("<div class='record'><div class='title'>_(:з」∠)_ </div><div class='info'>什么也没搜到,本搜索也只能帮你到这了...</div></div>");
+            return;
         }
         for (var i = result.length - 1; i > 0; i--) {
             for (var j in result[i]) {
                 var book = result[i][j];
-                bookStr += createBookRecord($(book).attr("name"), $(book).attr("size"), $(book).attr("type"), $(book).attr("modifyDate"), $(book).text());
+                bookStr += createBookRecord($(book).attr("name"), $(book).attr("size"), $(book).attr("type"), $(book).attr("modifyDate"),$(book).text());
             }
         }
         appendBook(bookStr);
@@ -104,7 +105,7 @@ function randomBook(times) {
     var bookStr = '';
     for (var i = 0; i < times; i++) {
         var book = books[Math.floor(Math.random() * books.length)];
-        bookStr = createBookRecord($(book).attr("name"), $(book).attr("size"), $(book).attr("type"), $(book).attr("modifyDate"), $(book).attr("link"),$(book).text());
+        bookStr = createBookRecord($(book).attr("name"), $(book).attr("size"), $(book).attr("type"), $(book).attr("modifyDate"),$(book).text());
         bookHtml += bookStr;
     }
     appendBook(bookHtml);
@@ -114,9 +115,8 @@ function appendBook(bookdom) {
     $("#booklist").append(bookdom);
 }
 
-function createBookRecord(bookname, size, type, modifyDate, link,location) {
+function createBookRecord(bookname, size, type, modifyDate,location) {
     bookname = replaceKeywords(bookname, window.keywords);
-    var linkstr;
     var str = "<div class='record'>" +
         "<div class='title'>" + bookname + "<span class='size'>" + calcSize(size) + "</span></div> " +
         "<div class='tips'>" +
@@ -124,7 +124,6 @@ function createBookRecord(bookname, size, type, modifyDate, link,location) {
         "</div>" +
         "<div class='info'>" +
         location +
-        " <a href='"+link+"'>下载</a></div>" +
         "</div>";
     return str;
 }
