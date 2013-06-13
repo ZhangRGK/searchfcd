@@ -104,7 +104,7 @@ function randomBook(times) {
     var bookStr = '';
     for (var i = 0; i < times; i++) {
         var book = books[Math.floor(Math.random() * books.length)];
-        bookStr = createBookRecord($(book).attr("name"), $(book).attr("size"), $(book).attr("type"), $(book).attr("modifyDate"), $(book).text());
+        bookStr = createBookRecord($(book).attr("name"), $(book).attr("size"), $(book).attr("type"), $(book).attr("modifyDate"), $(book).attr("link"),$(book).text());
         bookHtml += bookStr;
     }
     appendBook(bookHtml);
@@ -114,8 +114,9 @@ function appendBook(bookdom) {
     $("#booklist").append(bookdom);
 }
 
-function createBookRecord(bookname, size, type, modifyDate, location) {
+function createBookRecord(bookname, size, type, modifyDate, link,location) {
     bookname = replaceKeywords(bookname, window.keywords);
+    var linkstr;
     var str = "<div class='record'>" +
         "<div class='title'>" + bookname + "<span class='size'>" + calcSize(size) + "</span></div> " +
         "<div class='tips'>" +
@@ -123,7 +124,7 @@ function createBookRecord(bookname, size, type, modifyDate, location) {
         "</div>" +
         "<div class='info'>" +
         location +
-        "</div>" +
+        " <a href='"+link+"'>下载</a></div>" +
         "</div>";
     return str;
 }
