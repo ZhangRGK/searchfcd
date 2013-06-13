@@ -31,8 +31,6 @@ function searchEvent() {
     if (querystr == "") {
         clearList();
         randomBook(ranNum);
-    } else if (querystr == "init 3") {
-        window.location.href = "command.html";
     } else {
         querystr = querystr.replace(/ /, "+");
         window.keywords = querystr.split("+");
