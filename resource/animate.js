@@ -81,8 +81,8 @@ function include_js(file,callback) {
                 try{
                     window.clearTimeout(timeout);
                     document.body.className='';
-//                    (document.body).removeChild(document.getElementById('starfield'));
-                    document.getElementById('starfield').style.visibility = 'hidden';
+                    (document.body).removeChild(document.getElementById('starfield'));
+//                    document.getElementById('starfield').style.visibility = 'hidden';
                 }catch (e){
                     
                 }                
