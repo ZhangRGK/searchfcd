@@ -27,12 +27,16 @@ function searchEvent() {
     var bookStr = '';
     var ranNum = Math.floor(($(window).height() - 150) / 109);
     $(".topic").addClass("none");
+    var exp = /^[\w\u4E00-\u9FA5\uf900-\ufa2d\s]+$/;
     var querystr = $("#search_input").val();
+    if (!exp.test(querystr)) {
+        querystr = querystr.replace(/[^\w\u4E00-\u9FA5\uf900-\ufa2d\s]/g," ").replace(/\s{2,}/g," ").replace(/^\s+|\s+$|_/g,"");
+    }
     if (querystr == "") {
         clearList();
         randomBook(ranNum);
     } else {
-        querystr = querystr.replace(/ /, "+");
+        querystr = querystr.replace(/ /g,"+");
         window.keywords = querystr.split("+");
         var result = search(window.keywords);
         clearList();
@@ -55,8 +59,8 @@ function replaceKeywords(bookname, keywords) {
         var keyword = keywords[i];
         bookname = bookname.replace(keyword, "{lol~{" + keyword + "}~lol}");
     }
-    bookname = bookname.replace('{lol~{','<span class="keyword">');
-    bookname = bookname.replace('}~lol}','</span>');
+    bookname = bookname.replace(/{lol~{/g,'<span class="keyword">');
+    bookname = bookname.replace(/}~lol}/g,'</span>');
     return bookname;
 }
 
