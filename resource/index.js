@@ -27,11 +27,8 @@ function searchEvent() {
     var bookStr = '';
     var ranNum = Math.floor(($(window).height() - 150) / 109);
     $(".topic").addClass("none");
-    var exp = /^[\w\u4E00-\u9FA5\uf900-\ufa2d\s]+$/;
     var querystr = $("#search_input").val();
-    if (!exp.test(querystr)) {
-        querystr = querystr.replace(/[^\w\u4E00-\u9FA5\uf900-\ufa2d\s]/g," ").replace(/\s{2,}/g," ").replace(/^\s+|\s+$|_/g,"");
-    }
+    querystr = querystr.replace(/[^\w\u4E00-\u9FA5\uf900-\ufa2d\s]/g," ").replace(/\s{2,}/g," ").replace(/^\s+|\s+$|_/g,"");
     if (querystr == "") {
         clearList();
         randomBook(ranNum);
